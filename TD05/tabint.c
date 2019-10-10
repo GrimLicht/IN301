@@ -1,5 +1,5 @@
 #include "tabint.h"
-//#include "stat.h"
+#include "stat.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,10 +8,15 @@
 // #####
 TABINT gen_alea_tabint (int N, int K) {
 	TABINT T;
-	
+
+	T.N = N;
 	T.T = malloc(N * sizeof(int));
 	
-	T.N = N;
+	if(T.T == NULL) 
+	{
+		fprintf(stderr, "Pb alloc de memoire\n");
+		exit(1);
+	}
 	
 	int i;
 	for (i = 0; i < N; i++)

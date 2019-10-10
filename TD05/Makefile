@@ -1,9 +1,5 @@
-run: tri_bulle
-	valgrind ./tri_bulle
-	
 visu: stat.pdf
 	evince stat.pdf &
-
 
 stat.pdf: stat.gplt test_tri_bulle.data
 	gnuplot stat.gplt

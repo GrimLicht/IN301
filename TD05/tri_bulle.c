@@ -14,8 +14,8 @@ void tri_bulle(TABINT T)
 	{
 		scan_ech_tabint(T,i);
 	}
-	printf("NB_COMP = %d\n",NB_COMP);
-	printf("NB_ECH = %d\n",NB_ECH);	
+	//printf("NB_COMP = %d\n",NB_COMP);
+	//printf("NB_ECH = %d\n",NB_ECH);	
 }
 
 struct stat stat_moy(int N, int A)
@@ -24,15 +24,16 @@ struct stat stat_moy(int N, int A)
 	S.N = N;
 	long long int nb_tot_comp = 0;
 	long long int nb_tot_ech  = 0;
+	
 	int nbexp;
-	for (nbexp=0 ; nbexp < A ; nbexp++)
+	for (nbexp = 0 ; nbexp < A ; nbexp++)
 	{
 		TABINT T;
-		T = gen_alea_tabint (10, 100);
+		T = gen_alea_tabint (N, 100);
 		tri_bulle(T);
 		nb_tot_comp += NB_COMP;
 		nb_tot_ech += NB_ECH;
-		aff_tabint(T);
+		//aff_tabint(T);
 		T = sup_tabint (T);
 	}
 	S.nb_moy_comp = (float)nb_tot_comp/(float)A;

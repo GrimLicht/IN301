@@ -19,8 +19,8 @@ void aff_tabint (TABINT T);
 void ech_tabint (TABINT T, int i);
 void scan_ech_tabint (TABINT T, int fin);
 
-//void fusionner (TABINT T, int deb, int mil, int fin);
+void fusionner (TABINT T, int deb, int mil, int fin);
 
-//int verif_si_tableau_croissant (TABINT T); 
+int verif_si_tableau_croissant (TABINT T); 
 
 #endif
