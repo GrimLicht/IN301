@@ -4,27 +4,36 @@
 
 int main()
 {
-	struct liste *l = NULL;
-	affiche_rec(l);
-//	l = inserer_deb(l, 12); affiche_rec(l); printf("\n");
-//	l = inserer_deb(l, -3); affiche_rec(l); printf("\n");
-//	l = inserer_deb(l, 20); affiche_rec(l); printf("\n");
+	struct liste *l1 = NULL;
 	
-	inserer_deb2(&l, 12); affiche_rec(l); printf("\n");
-	inserer_deb2(&l, -3); affiche_rec(l); printf("\n");
-	inserer_deb2(&l, 20); affiche_rec(l); printf("\n");
+	affiche_rec(l1); printf("\n#\n");
+	l1 = inserer_trie_rec(l1, 12); 
+	l1 = inserer_trie_rec(l1, -3); 
+	l1 = inserer_trie_rec(l1, 20); 
+	l1 = inserer_trie_rec(l1, 489);
+	l1 = inserer_trie_rec(l1, -57);
+	affiche_rec(l1); printf("\n#\n");
 	
-//	printf("Nb elem = %d\n", nb_elem_iter(l));
-	printf("Nb elem rec = %d\n", nb_elem_rec(l));
-//	printf("Est présent -3 = %d\n", est_present_iter(l, -3));
-//	printf("Est présent 17 = %d\n", est_present_iter(l, 17));
-	printf("Est présent rec -3 = %d\n", est_present_rec(l, -3));
+	struct liste *l2 = NULL;
+	l2 = inserer_trie_rec(l2, 45); 
+	l2 = inserer_trie_rec(l2, -68); 
+	l2 = inserer_trie_rec(l2, -88); 
+	l2 = inserer_trie_rec(l2, 2222);
+	l2 = inserer_trie_rec(l2, -666);
+	affiche_rec(l2); printf("\n#\n");
+	
+	struct liste* l;
+	l = fusion(l1,l2);
+	affiche_rec(l); printf("\n#\n");
+	
+	
+	
+/*	printf("Nb elem rec = %d\n", nb_elem_rec(l));
+	printf("Est présent -3 = %d\n", est_present_iter(l, -3));
 	printf("Est présent rec 17 = %d\n", est_present_rec(l, 17));
-	printf("Est présent rec 12 = %d\n", est_present_rec(l, 12));
+*/
 	
-	affiche_rec(l); printf("\n");
-	l = supprimer_deb (l);
-	affiche_rec(l); printf("\n");
+	
 	
 	exit(0);
 }

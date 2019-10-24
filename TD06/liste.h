@@ -15,3 +15,14 @@ int est_present_rec (struct liste *l, int val);
 struct liste *inserer_deb (struct liste *l, int val);
 void inserer_deb2 (struct liste **l, int val);
 struct liste *supprimer_deb (struct liste *l);
+
+struct liste *inserer_fin_iter (struct liste *l, int val);
+struct liste *inserer_fin_rec (struct liste *l, int val);
+
+struct liste *inserer_trie_iter (struct liste *l, int val);
+struct liste *inserer_trie_rec (struct liste *l, int val);
+
+struct liste *retourner (struct liste *l);
+struct liste *concat_iter (struct liste *l1, struct liste *l2);
+struct liste *concat_rec (struct liste *l1, struct liste *l2);
+struct liste *fusion (struct liste *l1, struct liste *l2);
