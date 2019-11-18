@@ -37,6 +37,8 @@ TAS tas_creer()
 
 int pere_est_sup(TAS T, int i)
 {
+	if (i==1) return 1;
+	
 	int p = i/2;
 	if (T->t[p].prio > T->t[i].prio)
 		return 1;
@@ -81,6 +83,11 @@ TAS tas_inserer(TAS T, int id, int prio)
 	return T;
 }
 
+TAS reorganise_alt(TAS T, int i)
+{
+	return T;
+}
+
 ELEM tas_extraire(TAS T)
 {
 	ELEM e = T->t[1];
@@ -88,6 +95,7 @@ ELEM tas_extraire(TAS T)
 	T->t[1] = T->t[T->n];
 	(T->n)--;
 	
+	T = reorganise_alt(T, i);
 	return e;
 }
 
