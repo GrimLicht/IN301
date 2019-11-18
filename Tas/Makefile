@@ -1,13 +1,16 @@
-run: tas
-	./tas
+run: main
+	./main
 
-tas: tas.o tas.h
-	gcc -o tas tas.o
+main: main.o tas.o
+	gcc -Wall -o main main.o tas.o
+
+main.o: main.c tas.h
+	gcc -Wall -c main.c
 	
 tas.o: tas.c tas.h
-	gcc -c tas.c tas.h
+	gcc -Wall -c tas.c
 
 clean:
-	rm -f tas
+	rm -f main
+	rm -f main.o
 	rm -f tas.o
-	rm -f tas.h.gch

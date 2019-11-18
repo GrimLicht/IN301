@@ -1,11 +1,10 @@
-#define TAILLE_MAX 1000
-
+#define MAXELEM 1024
 struct elem
 {
 	int id;
 	int prio;
 	int date;
-};
+}; typedef struct elem ELEM;
 
 struct tas
 {
@@ -14,10 +13,16 @@ struct tas
 	struct elem *t;
 }; typedef struct tas* TAS;
 
-struct tas tas_creer();
+TAS tas_creer();
 
-void tas_inserer(TAS t, int id, int prio);
+TAS tas_inserer(TAS T, int id, int prio);
 
-struct elem tas_extraire(TAS t);
+ELEM tas_extraire(TAS t);
 
-void elem_affiche(struct elem e);
+int tas_vide(TAS T);
+
+void tas_affiche(TAS T);
+
+void elem_affiche(ELEM e);
+
+void afficher_elem(ELEM e);
